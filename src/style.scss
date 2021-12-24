@@ -1,0 +1,29 @@
+.BoggleContainer {
+  text-align: center;
+
+  button {
+    margin: auto;
+    display: block;
+  }
+}
+
+.Board {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 328px;
+
+  .Die {
+    display: inline-block;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 4px;
+  }
+}
