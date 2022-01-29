@@ -1,29 +1,87 @@
+// Imports
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap");
+
+// Variables
+$white: #ffffff;
+$black: #000000;
+$blue: #01baef;
+$orange: #ff9f1c;
+
+// Resets
+*,
+html,
+body {
+  font-family: "Bai Jamjuree", sans-serif;
+  color: $black;
+  background-color: $white;
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  font-size: 2.75rem;
+  margin: 1rem;
+}
+
+// Container
 .BoggleContainer {
   text-align: center;
+}
 
-  button {
-    margin: auto;
-    display: block;
+// Buttons
+.Button {
+  background-color: $blue;
+  color: $white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  &:hover {
+    background-color: darken($color: $blue, $amount: 10%);
   }
 }
 
+// Board
 .Board {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   width: 328px;
+  background-color: $orange;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 2px 2px lighten($color: $black, $amount: 25%);
+}
 
-  .Die {
-    display: inline-block;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 16px;
-    width: 40px;
-    height: 40px;
-    font-size: 40px;
-    line-height: 1;
-    text-align: center;
-    text-transform: capitalize;
-    margin: 4px;
+// Die
+.Die {
+  display: inline-block;
+  border: 1px solid darken($color: $white, $amount: 10%);
+  box-shadow: 1px 1px 2px 2px lighten($color: $black, $amount: 25%);
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 2.5rem;
+  background-color: $white;
+  border-radius: 0.5rem;
+  width: 74px;
+  height: 74px;
+  line-height: 1;
+  margin: 0.25rem;
+}
+
+// Timer
+.Timer {
+  .Timer-Time {
+    input,
+    span {
+      margin-right: 0.25rem;
+      font-size: 1rem;
+    }
+    input {
+      padding: 0.25rem 0.5rem;
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        opacity: 0.75;
+      }
+    }
   }
 }
