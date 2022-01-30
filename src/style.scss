@@ -1,5 +1,5 @@
 // Imports
-@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap");
 
 // Variables
 $white: #ffffff;
@@ -16,6 +16,7 @@ body {
   background-color: $white;
   padding: 0;
   margin: 0;
+  font-size: 16px;
 }
 h1 {
   font-size: 2.75rem;
@@ -66,6 +67,15 @@ h1 {
   height: 74px;
   line-height: 1;
   margin: 0.25rem;
+  cursor: pointer;
+
+  &.active {
+    background-color: lighten($color: $blue, $amount: 25%);
+  }
+
+  &:not(.active):hover {
+    background-color: lighten($color: $orange, $amount: 25%);
+  }
 }
 
 // Timer
@@ -82,6 +92,27 @@ h1 {
       &::-webkit-outer-spin-button {
         opacity: 0.75;
       }
+    }
+  }
+}
+
+// Score
+.Score {
+  .Score-Words {
+    ul {
+      columns: 3;
+      width: fit-content;
+      margin: auto;
+      list-style: none;
+    }
+    .pending::after {
+      content: "?";
+    }
+    .f {
+      text-decoration: line-through;
+    }
+    .t {
+      background-color: lighten($color: $blue, $amount: 25%);
     }
   }
 }
