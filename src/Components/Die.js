@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Die = ({ createdTime, index, sides, currentWord, dieClick }) => {
   const [value, setValue] = useState(sides[Math.floor(Math.random() * sides.length)]);
 
-  const isActive = currentWord.filter(letter => letter.index === index).length > 0;
+  const selectedOrder = currentWord.findIndex(letter => letter.index === index);
 
   useEffect(() => {
     setValue(sides[Math.floor(Math.random() * sides.length)]);
@@ -11,10 +11,13 @@ const Die = ({ createdTime, index, sides, currentWord, dieClick }) => {
 
   return (
     <button
-      className={`Die ${isActive ? 'active' : ''}`}
+      className={`Die ${selectedOrder > -1 ? 'active' : ''}`}
       onClick={() => { dieClick(index, value) }}
     >
       {value}
+      {selectedOrder > -1 && (
+        <span className='selected-order'>{selectedOrder + 1}</span>
+      )}
     </button>
   );
 }
